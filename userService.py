@@ -13,9 +13,32 @@ class UserService:
         self.__users.append(movie)
         self.__storage.save_to_file(self.__users, "./db.xml")
 
-    def read_users(self, user_type: str, user_id: int, name: str, email: str, age: int):
-        pass
+    def read_users(self):
+        self.users = self.__storage.load_from_file("./db.xml")
+        if not self.__users:
+            print("База пользователей пуста.")
+            return
+        for user in self.__users:
+            print(f"ID: {user.user_id}, Имя: {user.name}, Email: {user.email}, Возраст: {user.age}, Тип: {user.__class.name}")
+
     def update_user(self, user_type: str, user_id: int, name: str, email: str, age: int):
-        pass
-    def delete_user(self, user_type: str, user_id: int, name: str, email: str, age: int):
-        pass
+        self.users = self.__storage.load_from_file("./db.xml")
+        for user in self.__users:
+            if user.user_id == user_id and user.__class.name.lower() == user_type.lower():
+                user.name = name
+                user.email = email
+                user.age = age
+                self.storage.save_to_file(self.__users, "./db.xml")
+                print("Пользователь успешно обновлен.")
+                return
+        print("Пользователь не найден.")
+
+    def delete_user(self, user_type: str, user_id: int):
+        self.__users = self.__storage.load_from_file("./db.xml")
+        for user in self.__users:
+            if user.user_id == user_id and user.__class.name.lower() == user_type.lower():
+                self.__users.remove(user)
+                self.__storage.save_to_file(self.__users, "./db.xml")
+                print("Пользователь успешно удален.")
+                return
+        print("Пользователь не найден.")
