@@ -1,8 +1,8 @@
 
-from jsonSerializer import JsonSerializer
-from storage import Storage
-from xmlSerializer import XmlSerializer
-from userService import UserService
+from storage.jsonSerializer import JsonSerializer
+from storage.storage import Storage
+from storage.xmlSerializer import XmlSerializer
+from userManager import UserService
 
 def main():
 

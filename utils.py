@@ -1,6 +1,5 @@
 from user import UserFacebook, UserIcq, UserInstagram, UserSnapchat, UserTumbler, UserTelegram, UserTwitter, UserViber, UserVk, UserWhatsApp
 
-
 USERS_FACTORY_MAP = {
         'UserTelegram': lambda user_id, name, email, age: UserTelegram(user_id, name, email, age),
         'UserInstagram': lambda user_id, name, email, age: UserInstagram(user_id, name, email, age),

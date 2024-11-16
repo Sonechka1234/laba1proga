@@ -1,5 +1,5 @@
-from constants import USERS_FACTORY_MAP
-from storage import Storage
+from utils import USERS_FACTORY_MAP
+from storage.storage import Storage
 
 class UserService:
     def __init__(self, storage: Storage) -> None:

@@ -1,5 +1,5 @@
-from constants import USERS_FACTORY_MAP
-from serializer import Serializer
+from utils import USERS_FACTORY_MAP
+from storage.serializer import Serializer
 
 class Storage:
     def __init__(self, serializer: Serializer, file_path: str):

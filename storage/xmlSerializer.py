@@ -1,6 +1,6 @@
 from xml.etree.ElementTree import Element, SubElement, tostring, fromstring
 from xml.dom.minidom import parseString
-from serializer import Serializer
+from storage.serializer import Serializer
 
 class XmlSerializer(Serializer):
     def to_format(self, users) -> str:

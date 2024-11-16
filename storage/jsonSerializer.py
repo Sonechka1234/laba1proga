@@ -1,5 +1,5 @@
 import json
-from serializer import Serializer
+from storage.serializer import Serializer
 
 
 class JsonSerializer(Serializer):
