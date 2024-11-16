@@ -27,9 +27,19 @@ class XmlSerializer(Serializer):
         users = []
         for user_element in root:
             user_type = user_element.tag
+            user_id = int(user_element.find('user_id').text)
+            email = user_element.find('email').text
             name = user_element.find('name').text
             age = int(user_element.find('age').text)
-            users.append([user_type, name, age])
+            
+            user_data = {
+                "type": user_type,
+                "user_id": user_id,
+                "name": name,
+                "email": email,
+                "age": age,
+            }
+            users.append(user_data)
         return users
     
     def get_format(self) -> str:
