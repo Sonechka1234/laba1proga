@@ -1,0 +1,9 @@
+[
+    {
+        "type": "UserVk",
+        "user_id": 1,
+        "name": "Sonya",
+        "email": "s@gmail.com",
+        "age": 19
+    }
+]

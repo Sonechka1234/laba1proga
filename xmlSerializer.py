@@ -3,7 +3,7 @@ from xml.dom.minidom import parseString
 from serializer import Serializer
 
 class XmlSerializer(Serializer):
-    def to_format(self, users):
+    def to_format(self, users) -> str:
         root = Element("Users")
         for  user in users:
             user_element = Element(user.__class__.__name__)
@@ -22,7 +22,7 @@ class XmlSerializer(Serializer):
         pretty_xml = dom.toprettyxml(indent = '     ')
         return pretty_xml
 
-    def from_format(self, data):
+    def from_format(self, data) -> list:
         root = fromstring(data)
         users = []
         for user_element in root:
@@ -31,3 +31,6 @@ class XmlSerializer(Serializer):
             age = int(user_element.find('age').text)
             users.append([user_type, name, age])
         return users
+    
+    def get_format(self) -> str:
+        return 'xml'
