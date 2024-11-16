@@ -5,5 +5,12 @@
         "name": "Sonya",
         "email": "s@gmail.com",
         "age": 19
+    },
+    {
+        "type": "UserTwitter",
+        "user_id": 45,
+        "name": "Maksim",
+        "email": "m@gmail.com",
+        "age": 35
     }
 ]

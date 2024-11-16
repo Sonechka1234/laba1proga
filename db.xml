@@ -6,4 +6,10 @@
           <email>gmail.com</email>
           <age>75</age>
      </UserVk>
+     <UserInstagram>
+          <user_id>2</user_id>
+          <name>Liza</name>
+          <email>liza@gmail.com</email>
+          <age>19</age>
+     </UserInstagram>
 </Users>
